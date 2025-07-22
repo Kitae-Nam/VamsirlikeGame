@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public Dictionary<PlayerEquip, int> HpReasonDictionary = new Dictionary<PlayerEquip, int>();
+
     public int Hp { get; private set; }
 
 
@@ -81,6 +83,11 @@ public class Player : MonoBehaviour
 #endif
     }
 
+    public void RemoveAtkReason(AtkReason reason)
+    {
+
+    }
+
     //[Button("Add MoveSpeed")]
     public void AddMoveSpeedReason(MoveSpeedReason reason, int value)
     {
@@ -94,5 +101,9 @@ public class Player : MonoBehaviour
 #if Log
         Log.Message(LogType.StatMoveSpeed, $"이동속도 수치 변화 {value}");
 #endif
+    }
+    public void RemoveAtkReason(MoveSpeedReason reason)
+    {
+
     }
 }

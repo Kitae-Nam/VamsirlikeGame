@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    void Start()
+    private void Start()
+    {
+        Initialize();
+    }
+    void Initialize()
     {
         SetLogManager();
+        SetDataManager();
     }
 
     public static LogManager Log { get; private set; }
@@ -13,4 +18,15 @@ public class Manager : MonoBehaviour
     {
         Log = transform.GetComponentInChildren<LogManager>();
     }
+
+    public static DataManager Data { get; private set; }
+
+    public void SetDataManager()
+    {
+        Data = transform.GetComponentInChildren<DataManager>();
+    }
+
+    public static StageManager Stage { get; private set; }
+
+    
 }

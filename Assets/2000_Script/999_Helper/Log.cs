@@ -36,12 +36,12 @@ public class Log : MonoBehaviour
         {
             case LogType.StatAtk:
                 {
-                    typeMessage = $"[<Color=red>{type}</color>] ";
+                    typeMessage = $"<Color=red>[{type}]</color> ";
                 }
                 break;
             case LogType.StatMoveSpeed:
                 {
-                    typeMessage = $"[<Color=green>{type}</color>] ";
+                    typeMessage = $"<Color=green>[{type}]</color> ";
                 }
                 break;
         }
