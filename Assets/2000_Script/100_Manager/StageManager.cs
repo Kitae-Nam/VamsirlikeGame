@@ -1,30 +1,25 @@
-using NUnit.Framework;
-using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    public System.Collections.Generic.List<Enemy> EnemyList = new System.Collections.Generic.List<Enemy>();
+    public List<Enemy> EnemyList = new List<Enemy>();
 
-    private void Start()
-    {
-        Initialize();
-    }
     public void Initialize()
     {
-        Spawn();
+        SpawnMonster();
     }
-    public void Spawn()
+
+    public void SpawnMonster()
     {
         for (int i = 0; i < 10; i++)
         {
             Enemy newEnemy = Instantiate(Manager.Data.RefEnemy);
 
-            float randomXposotopn = Random.Range(-4f, 4f);
-            float randomYposotopn = Random.Range(-4f, 4f);
+            int randomXPosition = Random.Range(-4, 5);
+            int randomYPosition = Random.Range(-4, 5);
 
-            newEnemy.transform.position = new Vector3(randomXposotopn, randomYposotopn, 0);
+            newEnemy.transform.localPosition = new Vector3(randomXPosition, randomYPosition, 0);
 
             EnemyList.Add(newEnemy);
         }
